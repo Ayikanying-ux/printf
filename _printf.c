@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 				default:
 					break;
 			}
-			i = i + 2;	
+			i = i + 2;
 		}
 	}
 	va_end(args);

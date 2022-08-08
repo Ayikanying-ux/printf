@@ -40,9 +40,6 @@ int _printf(const char *format, ...)
 				case 'i':
 					sum += print_decimal(va_arg(args, int));
 					break;
-				case 'b':
-					sum += print_binary(va_arg(args, int));
-					breakiii;
 				default:
 					break;
 			}

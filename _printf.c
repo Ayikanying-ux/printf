@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%' && format[i + 1] != ' ')
 		{
-			switch(format[i + 1])
+			switch (format[i + 1])
 			{
 				case 'c':
 					sum += _putchar(va_arg(args, int));

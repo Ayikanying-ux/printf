@@ -7,7 +7,7 @@
  */
 int print_string(char *ch)
 {
-	int i, count = 0;
+	int count = 0;
 
 	while (*ch != '\0')
 	{

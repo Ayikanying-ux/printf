@@ -8,7 +8,7 @@ int run_print(const char *format, ...)
 	
 	va_list ap;
 	
-	va_start(ap, format)
+	va_start(ap, format);
 	switch (format[i + 1])
 		{
 			case 'c':
@@ -56,7 +56,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%' && format[i + 1] != ' ')
 		{
-			sum += run_print(const char *format, ..)
+			sum += run_print(const char *format, ..);
 			i += 2;
 		}
 	}

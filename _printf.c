@@ -2,39 +2,6 @@
 #include <stdarg.h>
 #include <string.h>
 
-int run_print(const char *format, ...)
-{
-	int sum = 0;
-	
-	va_list ap;
-	
-	va_start(ap, format);
-	switch (format[i + 1])
-		{
-			case 'c':
-				sum += _putchar(va_arg(args, int));
-				break;
-			case 's':
-				sum += print_string(va_arg(args, char*));
-				break;
-			case '%':
-				sum += _putchar('%');
-				break;
-			case 'd':
-				sum += print_decimal(va_arg(args, int));
-				break;
-			case 'i':
-				sum += print_decimal(va_arg(args, int));
-				break;
-			case 'b':
-				sum += print_binary(va_arg(args, int));
-				breakiii;
-			default:
-				break;
-		}
-	va_end(ap);
-	return (sum);
-}
 /**
  * _printf - produces output according to a format
  * @format: format to produce
@@ -55,9 +22,31 @@ int _printf(const char *format, ...)
 			i++;
 		}
 		else if (format[i] == '%' && format[i + 1] != ' ')
-		{
-			sum += run_print(const char *format, ..);
-			i += 2;
+		
+			switch (format[i + 1])
+				{
+					case 'c':
+						sum += _putchar(va_arg(args, int));
+						break;
+					case 's':
+						sum += print_string(va_arg(args, char*));
+						break;
+					case '%':
+						sum += _putchar('%');
+						break;
+					case 'd':
+						sum += print_decimal(va_arg(args, int));
+						break;
+					case 'i':
+						sum += print_decimal(va_arg(args, int));
+						break;
+					case 'b':
+						sum += print_binary(va_arg(args, int));
+						breakiii;
+					default:
+						break;
+				}
+			i = i + 2;	
 		}
 	}
 	va_end(args);

@@ -2,6 +2,14 @@
 #include <stdarg.h>
 #include <string.h>
 
+int run_print(const char *format, ...)
+{
+	if (format[i] == '\0' && format[i + 1] != ' ')
+	{
+		switch (format[i + 1]){
+			case 'c':
+				sum += _puchar(va_args(args, int));
+				break;
 /**
  * _printf - produces output according to a format
  * @format: format to produce
@@ -40,6 +48,9 @@ int _printf(const char *format, ...)
 				case 'i':
 					sum += print_decimal(va_arg(args, int));
 					break;
+				case 'b':
+					sum += print_binary(va_arg(args, int));
+					breakiii;
 				default:
 					break;
 			}

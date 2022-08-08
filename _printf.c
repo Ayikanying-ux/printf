@@ -22,30 +22,30 @@ int _printf(const char *format, ...)
 			i++;
 		}
 		else if (format[i] == '%' && format[i + 1] != ' ')
-		
+		{
 			switch (format[i + 1])
-				{
-					case 'c':
-						sum += _putchar(va_arg(args, int));
-						break;
-					case 's':
-						sum += print_string(va_arg(args, char*));
-						break;
-					case '%':
-						sum += _putchar('%');
-						break;
-					case 'd':
-						sum += print_decimal(va_arg(args, int));
-						break;
-					case 'i':
-						sum += print_decimal(va_arg(args, int));
-						break;
-					case 'b':
-						sum += print_binary(va_arg(args, int));
-						breakiii;
-					default:
-						break;
-				}
+			{
+				case 'c':
+					sum += _putchar(va_arg(args, int));
+					break;
+				case 's':
+					sum += print_string(va_arg(args, char*));
+					break;
+				case '%':
+					sum += _putchar('%');
+					break;
+				case 'd':
+					sum += print_decimal(va_arg(args, int));
+					break;
+				case 'i':
+					sum += print_decimal(va_arg(args, int));
+					break;
+				case 'b':
+					sum += print_binary(va_arg(args, int));
+					breakiii;
+				default:
+					break;
+			}
 			i = i + 2;	
 		}
 	}

@@ -1,51 +1,23 @@
-#include "main.h"
-#include <stdarg.h>
-#include <string.h>
-
-/**
- * _printf - produces output according to a format
- * @format: format to produce
- * Return: sum
- */
-int _printf(const char *format, ...)
+int _printf(const char *format, ...);
 {
-	int sum = 0, i;
+	int printed_chars;
+	conver_t f_list[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"%", print_percent},
+		{"d", print_integer},
+		{"i", print_integer},
+		{"b", print_binary},
+		{"r", print_reversed},
+		{"R", rot13},
+		{"u", unsigned_integer},
+		{"o", print_octal},
+		{"x", print_hex},
+		{"X", print_hex},
+		{NULL, NULL}
+	};
 
-	va_list args;
+	if (format == '\0')
+		return (-1);
 
-	va_start(args, format);
-	for (i = 0; format[i] != '\0';)
-	{
-		if (format[i] != '%')
-		{
-			sum += _putchar(format[i]);
-			i++;
-		}
-		else if (format[i] == '%' && format[i + 1] != ' ')
-		{
-			switch (format[i + 1])
-			{
-				case 'c':
-					sum += _putchar(va_arg(args, int));
-					break;
-				case 's':
-					sum += print_string(va_arg(args, char*));
-					break;
-				case '%':
-					sum += _putchar('%');
-					break;
-				case 'd':
-					sum += print_decimal(va_arg(args, int));
-					break;
-				case 'i':
-					sum += print_decimal(va_arg(args, int));
-					break;
-				default:
-					break;
-			}
-			i = i + 2;
-		}
-	}
-	va_end(args);
-	return (sum);
 }
